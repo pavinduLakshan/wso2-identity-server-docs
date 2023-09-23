@@ -17,32 +17,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
+    title: 'Authentication',
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Try out login with SSO, MFA, identity federation, and self sign-up
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Consent Manageemnt',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Manage user consent when accessing a user’s resources
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'User and Tenant Management',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Manage users and groups in your tenant organization, with multi-tenancy to optimize resource sharing among users
       </>
     ),
   },

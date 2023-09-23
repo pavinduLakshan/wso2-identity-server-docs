@@ -13,7 +13,7 @@
 const config = {
   title: 'Awesome WSO2 Identity Server',
   tagline: 'Everything awesome about WSO2 Identity Server, in forms of blogs, articles, videos and more',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/awesome-is-logo.ico',
 
   // Set the production url of your site here
   url: 'https://wso2identityserver.com',
@@ -45,8 +45,8 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -63,102 +63,120 @@ const config = {
         title: 'Awesome WSO2 IS',
         logo: {
           alt: 'WSO2 Identity Server Logo',
-          src: 'img/logo.svg',
+          src: 'img/awesome-is-logo.png',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'setupSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Setup',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'guideSidebar',
+            position: 'left',
+            label: 'Guides',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'apiSidebar',
+            position: 'left',
+            label: 'APIs',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'sdkSidebar',
+            position: 'left',
+            label: 'SDKs',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'referenceSidebar',
+            position: 'left',
+            label: 'References',
           },
           {to: 'blog', label: 'Blog', position: 'left'},
-          // Please keep GitHub link to the right for consistency.
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Learn',
-            items: [
-              {
-                label: 'Style Guide',
-                to: 'docs/',
-              },
-              {
-                label: 'Second Doc',
-                to: 'docs/doc2',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'Legal',
-            // Please do not remove the privacy and terms, it's a legal requirement.
-            items: [
-              {
-                label: 'Privacy',
-                href: 'https://opensource.fb.com/legal/privacy/',
-              },
-              {
-                label: 'Terms',
-                href: 'https://opensource.fb.com/legal/terms/',
-              },
-              {
-                label: 'Data Policy',
-                href: 'https://opensource.fb.com/legal/data-policy/',
-              },
-              {
-                label: 'Cookie Policy',
-                href: 'https://opensource.fb.com/legal/cookie-policy/',
-              },
-            ],
-          },
+          // {
+          //   title: 'Learn',
+          //   items: [
+          //     {
+          //       label: 'Style Guide',
+          //       to: 'docs/',
+          //     },
+          //     {
+          //       label: 'Second Doc',
+          //       to: 'docs/doc2',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'More',
+          //   items: [
+          //     {
+          //       label: 'Blog',
+          //       to: 'blog',
+          //     },
+          //     {
+          //       label: 'GitHub',
+          //       href: 'https://github.com/facebook/docusaurus',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Legal',
+          //   // Please do not remove the privacy and terms, it's a legal requirement.
+          //   items: [
+          //     {
+          //       label: 'Privacy',
+          //       href: 'https://opensource.fb.com/legal/privacy/',
+          //     },
+          //     {
+          //       label: 'Terms',
+          //       href: 'https://opensource.fb.com/legal/terms/',
+          //     },
+          //     {
+          //       label: 'Data Policy',
+          //       href: 'https://opensource.fb.com/legal/data-policy/',
+          //     },
+          //     {
+          //       label: 'Cookie Policy',
+          //       href: 'https://opensource.fb.com/legal/cookie-policy/',
+          //     },
+          //   ],
+          // },
         ],
-        logo: {
-          alt: 'Meta Open Source Logo',
-          // This default includes a positive & negative version, allowing for
-          // appropriate use depending on your site's style.
-          src: '/img/meta_opensource_logo_negative.svg',
-          href: 'https://opensource.fb.com',
-        },
+        // logo: {
+        //   alt: 'WSO2 Identity Server Logo',
+        //   // This default includes a positive & negative version, allowing for
+        //   // appropriate use depending on your site's style.
+        //   src: '/img/meta_opensource_logo_negative.svg',
+        //   href: 'https://opensource.fb.com',
+        // },
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Awesome WSO2 IS. Built with Docusaurus.`,
       },
     }),
 };

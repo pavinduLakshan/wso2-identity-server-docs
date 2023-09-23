@@ -1,11 +1,28 @@
-# Website
+# Awesome WSO2 IS
+Articles, tutorials and everything else about WSO2 Identity Server
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+## Versioning strategy
 
-### Installation
+Initially, use a single site and explain version differences in the same document.
 
-```
-$ yarn
+Later, move to git based versioning strategy.
+
+## todo
+
+- RESTORE SETUP/DEPLOYEMENT_GUIDE FROM deploy/deployment-guide
+setup elk-analytics-sso-guide from deploy/elk-analytics-sso-guide
+docs/setup/enable-xacml-policy-update-notifications.md
+docs/setup/monitor deploy/monitor
+deploy/performance
+deploy/security
+deploy/upgrade
+docs/setup/secure-userstore-using-pbkdf2.md
+docs/setup/work-with-properties-of-user-stores.md
+
+## Installation
+
+```bash
+yarn
 ```
 
 ### Local Development
