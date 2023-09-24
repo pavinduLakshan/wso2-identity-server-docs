@@ -1,6 +1,6 @@
 # Install WSO2 Identity Server
 
-## Prerequisites
+<!-- ## Prerequisites
 Prior to installing any WSO2 Identity Server, it is necessary to
 have the appropriate prerequisite software installed on your system.
 Verify that the computer has the supported operating system and
@@ -33,8 +33,8 @@ development platforms before starting the installation.
 
 <table>
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 86%" />
+<col style={{width: "13%"}} />
+<col style={{width: "86%"}} />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -81,7 +81,7 @@ samples or for building from the source code.
 
 These applications are mandatory and are required to run the binary
 distribution of the WSO2 product. The binary distribution contains the
-binary files for both MS Windows, and Linux-based operating systems.
+binary files for both MS Windows, and Linux-based operating systems. -->
 
 <!-- <table>
 <colgroup>
@@ -145,12 +145,12 @@ and compiling and running product samples.
 
     If you are installing by downloading and extracting the binary distribution (as recommended for most users) instead of building from the source code, you do not need to install Maven.
 
-<table style="width:100%;">
+<table style={{width: "100%"}}>
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 55%" />
-<col style="width: 13%" />
-<col style="width: 19%" />
+<col style={{width: "12%"}} />
+<col style={{width: "55%"}} />
+<col style={{width: "13%"}} />
+<col style={{width: "19%"}} />
 </colgroup>
 <thead>
 <tr class="header">
