@@ -45,8 +45,8 @@ columns and a description of the values it contains.
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
+<col style={{ width:"25%" }} />
+<col style={{ width:"75%" }} />
 </colgroup>
 <thead>
 <tr class="header">
@@ -101,8 +101,8 @@ description of the values it contains.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style={{ width:"50%" }} />
+<col style={{ width:"50%" }} />
 </colgroup>
 <thead>
 <tr class="header">
@@ -149,8 +149,8 @@ contains.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style={{ width:"50%" }} />
+<col style={{ width:"50%" }} />
 </colgroup>
 <thead>
 <tr class="header">

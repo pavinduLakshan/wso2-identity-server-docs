@@ -44,9 +44,9 @@ that are set by default.
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style={{width: "33%"}} />
+<col style={{width: "33%"}} />
+<col style={{width: "33%"}} />
 </colgroup>
 <thead>
 <tr class="header">
@@ -74,9 +74,9 @@ You can add more optional configurations using the
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style={{width: "33%"}} />
+<col style={{width: "33%"}} />
+<col style={{width: "33%"}} />
 </colgroup>
 <thead>
 <tr class="header">

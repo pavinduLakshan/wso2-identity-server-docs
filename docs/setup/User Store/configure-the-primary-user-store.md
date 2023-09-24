@@ -25,9 +25,9 @@ There are two steps involved in setting up the primary userstore:
 
     <table>
     <colgroup>
-    <col style="width: 10%" />
-    <col style="width: 40%" />
-    <col style="width: 48%" />
+    <col style={{ width: "10%" }} />
+    <col style={{ width: "40%" }} />
+    <col style={{ width: "48%" }} />
     </colgroup>
     <thead>
     <tr class="header">

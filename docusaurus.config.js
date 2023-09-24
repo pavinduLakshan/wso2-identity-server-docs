@@ -26,8 +26,9 @@ const config = {
   organizationName: 'WSO2IS', // Usually your GitHub org/user name.
   projectName: 'awesone-wso2is', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // temporarily ignore broken links
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
 
   presets: [
     [

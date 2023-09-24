@@ -63,8 +63,8 @@ is structured to work in WSO2 Identity Server:
 
     <table>
     <colgroup>
-    <col style="width: 50%" />
-    <col style="width: 50%" />
+    <col style={{ width:"50%" }} />
+    <col style={{ width:"50%" }} />s
     </colgroup>
     <tbody>
     <tr class="odd">

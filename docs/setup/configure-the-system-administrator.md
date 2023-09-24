@@ -64,8 +64,8 @@ Note the following regarding the configuration above.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style={{width: "50%"}} />
+<col style={{width: "50%"}} />
 </colgroup>
 <thead>
 <tr class="header">

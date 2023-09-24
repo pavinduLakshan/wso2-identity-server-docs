@@ -27,9 +27,9 @@ You can use either the management console to create secondary userstores or you 
 
     <table>
     <colgroup>
-    <col style="width: 10%" />
-    <col style="width: 40%" />
-    <col style="width: 48%" />
+    <col style={{ width: "10%" }} />
+    <col style={{ width: "40%" }} />
+    <col style={{ width: "48%" }} />
     </colgroup>
     <thead>
     <tr class="header">
