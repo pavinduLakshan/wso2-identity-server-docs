@@ -1,5 +1,6 @@
-<!-- # Configure a Read-write Active Directory Userstore
+# Configure a Read-Write Active Directory Userstore
 
+<!--
 WSO2 Identity Server uses the embedded H2 database as the primary user store.
 This document will guide you to change that to a Read Write Active Directory userstore.
 

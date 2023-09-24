@@ -1,5 +1,6 @@
-<!-- # Configure a Read-only LDAP Userstore
+# Configure a Read Only LDAP Userstore
 
+<!--
 WSO2 Identity Server uses the embedded H2 database as the primary user store.
 This document will guide you to change that to a Read-Only LDAP userstore.
 

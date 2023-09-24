@@ -1,5 +1,6 @@
-<!-- # Configure a Read-write LDAP userstore
+# Configure a Read-write LDAP userstore
 
+<!-- 
 WSO2 Identity Server uses the embedded H2 database as the primary user store. This document will guide you to change that to a Read/Write LDAP user store.
 
 !!! tip 
