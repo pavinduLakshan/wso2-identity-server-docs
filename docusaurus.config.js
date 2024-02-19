@@ -11,8 +11,8 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Awesome WSO2 Identity Server',
-  tagline: 'Everything awesome about WSO2 Identity Server, in forms of blogs, articles, videos and more',
+  title: 'WSO2 Identity Server',
+  tagline: 'WSO2 Identity Server',
   favicon: 'img/awesome-is-logo.ico',
 
   // Set the production url of your site here
@@ -54,6 +54,23 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        // Plugin Options for loading OpenAPI files
+        specs: [
+          {
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/api/',
+          },
+        ],
+        // Theme Options for modifying how redoc renders them
+        theme: {
+          // Change with your site colors
+          primaryColor: '#1890ff',
+        },
+      },
+    ],
   ],
 
   themeConfig:
@@ -61,7 +78,7 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Awesome WSO2 IS',
+        title: 'WSO2 IS',
         logo: {
           alt: 'WSO2 Identity Server Logo',
           src: 'img/awesome-is-logo.png',
@@ -177,7 +194,7 @@ const config = {
         //   href: 'https://opensource.fb.com',
         // },
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()} Awesome WSO2 IS. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} WSO2 IS. Built with Docusaurus.`,
       },
     }),
 };
