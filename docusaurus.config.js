@@ -13,7 +13,7 @@
 const config = {
   title: 'WSO2 Identity Server',
   tagline: 'WSO2 Identity Server',
-  favicon: 'img/awesome-is-logo.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://wso2identityserver.com',
@@ -23,8 +23,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'WSO2IS', // Usually your GitHub org/user name.
-  projectName: 'awesone-wso2is', // Usually your repo name.
+  organizationName: 'wso2', // Usually your GitHub org/user name.
+  projectName: 'docs-is', // Usually your repo name.
 
   // temporarily ignore broken links
   onBrokenLinks: 'ignore',
@@ -40,7 +40,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/wso2/docs-is'
         },
         blog: {
           showReadingTime: true,
@@ -78,10 +78,10 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'WSO2 IS',
+        title: 'Identity Server Docs',
         logo: {
           alt: 'WSO2 Identity Server Logo',
-          src: 'img/awesome-is-logo.png',
+          src: 'img/identity-server-logo.svg',
         },
         items: [
           {
@@ -115,6 +115,12 @@ const config = {
             label: 'References',
           },
           {to: 'blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
       footer: {
@@ -194,7 +200,7 @@ const config = {
         //   href: 'https://opensource.fb.com',
         // },
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()} WSO2 IS. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} WSO2 Identity Server. Built with Docusaurus.`,
       },
     }),
 };
