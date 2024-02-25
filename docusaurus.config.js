@@ -60,8 +60,8 @@ const config = {
         // Plugin Options for loading OpenAPI files
         specs: [
           {
-            spec: 'https://redocly.github.io/redoc/openapi.yaml',
-            route: '/api/',
+            id: 'admin-advisory-management',
+            spec: 'docs/apis/restapis/admin-advisory-management.yaml',
           },
         ],
         // Theme Options for modifying how redoc renders them

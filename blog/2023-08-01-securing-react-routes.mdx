@@ -2,19 +2,225 @@
 slug: authenticate-react-applications-with-asgardeo-securing-routes
 title: "Authenticate React Applications with Asgardeo-Part 2: Securing Routes"
 authors: [omal]
-tags: [docusaurus]
+tags: [react,routing,asgardeo,authentication]
 ---
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+In part 1, we talked about what Asgardeo is and how we can use Asgardeo to integrate user 
+authentication for a React application. You can read about it here. In this chapter, we will 
+be talking about approaches that can be done to our authentication flow to make the application 
+more secure and other improvements to make it a seamless integration. I will be using the same 
+To-do Application that I used in the previous article as a continuation for part 2.
 
-:::tip
+## Using the state object​
 
-Use the power of React to create interactive blog posts.
+So far we have integrated Asgardeo into our to-do app. But we have not made it secure as we can 
+still visit the internal pages (such as the homepage) by just typing in the URL, even if you are 
+not authenticated. This should not be allowed and the internal pages should be only accessed when 
+the user has logged into the app.
 
-```js
-<button onClick={() => alert('button clicked!')}>Click me!</button>
+To check the login status of the user within the to-do app, I’m using the stateobject provided by 
+the useAuthContext() hook, which is an implementation of the Asgardeo Auth React SDK which you can 
+find here. Similarly, there are many more Asgardeo SDKs tailored for different languages and 
+frameworks that you may use.
+
+The state object will contain attributes such as whether a user is currently logged in, the 
+username of the currently logged-in user etc. Its structure is as follows.
+
+```json
+{
+    "allowedScopes": "",
+    "displayName": "",
+    "email": "",
+    "isAuthenticated": false,
+    "isLoading": true,
+    "sub": "",
+    "username": ""
+}
 ```
 
-<button onClick={() => alert('button clicked!')}>Click me!</button>
+I have used the attributes in the state object to indicate the user status within the homepage as 
+follows.
 
-:::
+```js
+const resolveUserName = () => {
+    if (state.isAuthenticated) {
+        // A user is logged in.
+        return "Welcome, " + state.username;
+    } else {
+        return "User Not Found";
+    }
+};
+```
+
+When a user is present it will display the username of the current user and when a user is not 
+logged in, it will display “User Not Found”. Anyways it should not be allowed to go to the 
+homepage without an authenticated user. We will be fixing this problem in the section below.
+
+The header will display the username (email) when a user is logged in
+
+
+The header will display the error message when a user is not logged in (this should not be allowed)
+
+## Securing Routes!​
+
+As mentioned above, a user should not be able to visit the homepage just by entering the URL 
+without proper authentication. There are several ways to handle this from Asgardeo.
+
+1. SecureApp Component​
+
+The Asgardeo React SDK provides the SecureApp component is used to secure the whole React App. 
+This wraps a React component (similar to a context API) and renders it only if the user is signed 
+in. If the user is not signed in, this component automatically initiates the sign-in flow.
+
+2. SecureRoute Component​
+
+SecureRoute is a component which is an extension of the react-router-dom. SecureRoute will only 
+allow authenticated users to take the given route. It also has a prop named callback which takes 
+a function which will be executed if an unauthorized user tries to take that route.
+
+3. AuthenticatedComponent​
+
+This component is used to wrap the components that need authentication. If the user is 
+authenticated, it renders the wrapped component. If the user is not authenticated, the component 
+renders the fallback prop. This is useful when you need to selectively render components based on 
+whether a user is authenticated or not.
+
+Apart from these methods, you can use your own custom approach to secure your application using 
+the useAuthContext() hook. In this example, I will be using the SecureApp component as I want to 
+secure the whole app with Asgardeo and I do not have any component which needs access without 
+authentication. With SecureApp integrated, my App.js file will look as follows.
+
+```js
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { SecureApp } from "@asgardeo/auth-react";
+import { Spin } from "antd";
+import { HomePage } from "./pages/home";
+import { TodoPage } from "./pages/todo";
+import { SettingsPage } from "./pages/settings";
+
+const SignInLoader = () => {
+    return (
+        <div className="loading-container">
+            <Spin size="large" />
+        </div>
+    );
+};
+
+const PageNotFound = () => {
+    return (
+        <div className="loading-container">
+            <h1>Page not found :(</h1>
+        </div>
+    );
+};
+
+function App() {
+    return (
+        <SecureApp fallback={<SignInLoader />}>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<HomePage />}>
+                        <Route index element={<TodoPage />} />
+                        <Route path="settings" element={<SettingsPage />} />
+                    </Route>
+                    <Route path="*" element={<PageNotFound />} />
+                </Routes>
+            </div>
+        </SecureApp>
+    );
+}
+
+export default App;
+```
+
+As seen above, the `<Routes/>` component is now wrapped with the SecureApp provider which takes 
+3 props (I have used only 1). The fallback prop will be rendered when a user is not currently 
+logged in and it will automatically initiate the sign-in flow and will redirect the user to log 
+in with Asgardeo. This authentication flow can be overridden by defining the overrideSignIn prop 
+in case you need your own sign-in logic (I have not used this prop. So it will use the default 
+sign-in method of Asgardeo). The onSignIn prop will be fired upon successful authentication. 
+It can be used to perform a logic that needs to be done right after logging in.
+
+Now that the app is secured with SecureApp, it should not allow an unauthenticated user to see the 
+pages in the app by just entering the URL (ex: http://localhost:3000/settings). When it occurs, 
+they will be redirected to the login. I have also added a small loading spinner while Asgardeo is 
+working, using the isLoading attribute in the state object as seen above :) The URLs are now secure 
+and can only be accessed by users authenticated by Asgardeo. It’s easy as that!
+
+As seen in the above App.js file, I have also removed the login page as it is no longer required 
+and is handled by Asgardeo. The user will be directly taken to the login page when they visit the 
+to-do app. But now there’s a problem! The login page we have now is having Asgardeo theming which 
+can confuse the users. But this can be easily solved by theming and branding features supported by 
+Asgardeo, which you can read about here. We will be looking at how to customize the login page in 
+upcoming chapters :) But for now, let’s keep it this way.
+
+## Retrieving User Information​
+
+Let’s add some fields to the Settings tab where a logged-in user can view their user profile 
+details. To retrieve user details, useAuthContext() hook have another method called `getBasicUserInfo()`. 
+By default they return fields like username, sub, allowedScopes and sessionState. 
+If we want to get more information like a user’s firstname, lastname etc. We have to first enter 
+those information. That can be done by Asgardeo My Account where a user can self-service to manage 
+their profile. You can find the relevant link for My Account within the Applications section as 
+follows. It will vary according to your organization name.
+
+enter image description here
+
+When you login to the My Account using the user credentials of the to-do application user (the same credentials used to login to the to-do app), you should be able to enter user information in the Personal Info tab in the My Account. I have added my personal infomation as follows.
+
+enter image description here
+
+Eventhough you have now added the personal information, if you checked the data coming from the getBasicUserInfo() method, you’ll see that you’re still getting the same data as before. The reason for this is that we have to configure the application from the Asgardeo Console to send these additional user information to the to-do application. Let’s do that!
+
+Enabling First Name and Last Name is easy, First login to the Asgardeo Console. Then, navigate to the To-do Application settings and click on the User Attributes tab. Add the personal information you need to display on the application side. In this case, I will add Country, First Name, Last Name, Mobile, and Birth Date. Once you have added it, click on Update to save the changes.
+
+enter image description here
+
+Retrieving MORE User Information​
+We are not done yet! If you now check the data coming from the getBasicUserInfo() you’ll see that only First Name and Last Name is present as additional information. To get the other attributes, there’s one more step to do. Navigate to Manage > Scopes in the Asgardeo Console and click on the Profile Scope. Add the missing attributes — Birth Date, Country and Mobile and click Save.
+
+enter image description here
+
+Once you click Save, you should see the newly added attributes in the Profile scope as shown below.
+
+enter image description here
+
+Now try to log into the To-do application and you should see a consent screen as shown below to grant access to the attributes you have added to the application.
+
+enter image description here
+
+Grant access to those information and log into the application. Now, the data received by the getUserBasicInfo() method will be as follows. To learn more about managing user attributes with Asgardeo, refer here.
+
+```json
+{
+    "allowedScopes": "openid profile",
+    "sessionState": "",
+    "displayName": "Omal Vindula",
+    "username": "omalvindula@live.com",
+    "sub": "xxbef8c0-xxxx-xxxx-xxxx-b5c8995xb3x6",
+    "birthdate": "1995-05-03",
+    "address": {
+        "country": "Sri Lanka"
+    },
+    "givenName": "Omal",
+    "phoneNumber": "0123456789",
+    "familyName": "Vindula"
+}
+```
+
+Using these information, I have created a profile information view as follows. You can find the code for this view under settings.js file. This view is readonly. To edit the user details, the users have to use the Asgardeo My Account.
+
+enter image description here
+
+Now we have created a to-do app that’s fully secured with Asgardeo… we are not done just yet! By utilizing the full power of Asgardeo, we are yet to do theming, add more login options and many more… But that’s for another time. Until then… Cheers!
+
+References​
+For more information, you can use the following reference links.
+
+https://wso2.com/asgardeo/docs/
+
+https://reactjs.org/docs/getting-started.html
+
+https://github.com/DonOmalVindula/sample-to-do-app/tree/asgardeo-integration-part-2
+
