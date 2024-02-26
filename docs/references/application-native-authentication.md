@@ -147,7 +147,7 @@ If the application is hosted either in the App Store or the Google Play Store, f
 	By leveraging DCAppAttestService, WSO2 Identity Server adds an extra layer of security to Application Native Authentication for iOS apps. It actively detects and responds to potential threats, safeguarding against unauthorized access and malicious activities.
 	Learn more about [Apple's DeviceCheck Attest Service](https://developer.apple.com/documentation/devicecheck/dcappattestservice)
 
-	:::
+ 	:::
 
 	- Provide the app ID of your application which consists of the Team ID and the bundle ID separated by a period (.). (e.g. A1B2C3D4E5.com.domainname.applicationname)
 

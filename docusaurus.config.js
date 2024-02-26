@@ -11,8 +11,8 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'WSO2 Identity Server',
-  tagline: 'WSO2 Identity Server',
+  title: 'WSO2 Identity Server Docs',
+  tagline: '',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
