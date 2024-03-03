@@ -1,6 +1,6 @@
 # Password validation
 
-Customize password validation rules to enhance the security of user accounts in {{product_name}}.
+Customize password validation rules to enhance the security of user accounts.
 
 ## Configuration instructions
 

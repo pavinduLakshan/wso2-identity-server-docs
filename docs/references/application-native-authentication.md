@@ -125,7 +125,7 @@ If the application is hosted either in the App Store or the Google Play Store, f
 
     :::tip
 
-	By leveraging the Google Play Integrity API, `product_name` ensures a heightened level of security for Application Native Authentication. It actively detects and responds to potential threats, thereby safeguarding against attacks and mitigating the risk of abuse.
+	Leveraging the Google Play Integrity API assures a heightened level of security for Application Native Authentication. It actively detects and responds to potential threats, thereby safeguarding against attacks and mitigating the risk of abuse.
 	Learn more about the [Play Integrity API](https://developer.android.com/google/play/integrity/overview).
 
 	:::

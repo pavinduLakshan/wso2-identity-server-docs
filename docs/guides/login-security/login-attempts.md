@@ -1,6 +1,6 @@
 # Login attempts
 
-Secure user accounts from unauthorized access by configuring the login attempts policy in {{product_name}}.
+Secure user accounts from unauthorized access by configuring the login attempts policy.
 
 ## Configuration instructions
 
@@ -34,7 +34,7 @@ To manage login attempts settings, do the following:
 </table>
 
 !!! Info
-    - In the {{product_name}} login pages, a generic error message is displayed by default to end-users in the event of login failures. To show more specific error messages on the login page, the following properties can be configured in the `deployment.toml` file, which is located in the `<IS_HOME>/repository/conf` directory.
+    - In login pages, a generic error message is displayed by default to end-users in the event of login failures. To show more specific error messages on the login page, the following properties can be configured in the `deployment.toml` file, which is located in the `<IS_HOME>/repository/conf` directory.
 
     Basic authenticator configurations:
 
