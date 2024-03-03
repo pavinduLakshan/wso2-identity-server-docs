@@ -79,6 +79,14 @@ const config = {
             id: 'keystore',
             spec: 'docs/apis/_restapis/keystore.yaml',
           },
+          {
+            id: 'scim2-users',
+            spec: 'docs/apis/_restapis/scim2-users.yaml',
+          },
+          {
+            id: 'scim2-applications',
+            spec: 'docs/apis/_restapis/scim2-sp-configs.yaml',
+          }
         ],
         // Theme Options for modifying how redoc renders them
         theme: {
