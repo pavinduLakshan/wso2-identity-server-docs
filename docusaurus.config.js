@@ -61,7 +61,23 @@ const config = {
         specs: [
           {
             id: 'admin-advisory-management',
-            spec: 'docs/apis/restapis/admin-advisory-management.yaml',
+            spec: 'docs/apis/_restapis/admin-advisory-management.yaml',
+          },
+          {
+            id: 'applications',
+            spec: 'docs/apis/_restapis/application.yaml',
+          },
+          {
+            id: 'approvals',
+            spec: 'docs/apis/_restapis/approvals.yaml',
+          },
+          {
+            id: 'identity-providers',
+            spec: 'docs/apis/_restapis/idp.yaml',
+          },
+          {
+            id: 'keystore',
+            spec: 'docs/apis/_restapis/keystore.yaml',
           },
         ],
         // Theme Options for modifying how redoc renders them
