@@ -11,7 +11,7 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'WSO2 Identity Server Docs',
+  title: 'WSO2 Identity Server',
   tagline: '',
   favicon: 'img/favicon.png',
 
