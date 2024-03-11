@@ -105,7 +105,7 @@ const config = {
         appId: 'IMZVKAC56K',
   
         // Public API key: it is safe to commit it
-        apiKey: 'cda02a8b11fe1187933b6c569ea80f91',
+        apiKey: '30b58668d899508b808f841589bf7438',
   
         indexName: 'wso2identityserver',
   
