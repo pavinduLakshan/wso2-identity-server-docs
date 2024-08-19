@@ -1,4 +1,5 @@
 # WSO2 Identity Server Docs
+Community maintained documentation for WSO2 Identity Server
 
 ## Installation
 
