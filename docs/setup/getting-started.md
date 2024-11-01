@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Getting Started
 
 Follow the steps given below to set up and install WSO2 Identity Server on your computer in quick time.
@@ -62,5 +66,5 @@ To change the default admin password, log in to the MyAccount portal as the admi
 
 ## What's next?
 
-Add login to your application using the Identity Server or try it on a sample application. [Try integrating IS into apps](/get-started/try-samples).
+Add login to your application using the Identity Server or try it on a sample application. [Try integrating your application with WSO2 Identity Server](/docs/setup/try-samples).
 

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+sidebar_label: Introduction
 ---
 
 # What is WSO2 Identity Server?
